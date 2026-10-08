@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <title>Job API Collector</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">JC</div>
+            <div>
+                <h1>Job API Collector</h1>
+                <p>Find and filter live remote opportunities.</p>
+            </div>
+        </div>
+        <nav class="top-actions">
+            <button id="refreshButton" class="ghost-button">↻ <span>Refresh</span></button>
+            <a class="dark-button" href="/api/export">↓ <span>Export JSON</span></a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div>
+                <span class="eyebrow">LIVE JOB SEARCH</span>
+                <h2>Find a role that fits.</h2>
+                <p>Search across current listings and narrow them down with filters.</p>
+            </div>
+            <div class="hero-note"><span class="pulse"></span> Live API data</div>
+        </section>
+
+        <section class="search-panel">
+            <div class="search-row">
+                <div class="search-field">
+                    <span>⌕</span>
+                    <input id="search" type="text" placeholder="Job title, company, skill or keyword..." autocomplete="off">
+                </div>
+                <button id="searchButton" class="primary-button">Search jobs</button>
+            </div>
+            <div class="filters">
+                <label><span>Location</span><input id="location" type="text" placeholder="e.g. India, Europe"></label>
+                <label><span>Category</span><select id="category"><option value="">All categories</option></select></label>
+                <label><span>Job type</span><select id="jobType"><option value="">All job types</option></select></label>
+                <label><span>Sort by</span><select id="sort"><option value="latest">Latest</option><option value="oldest">Oldest</option><option value="company">Company A–Z</option><option value="random">Random</option></select></label>
+                <label class="remote-toggle"><span>Remote</span><span class="switch"><input id="remote" type="checkbox"><i></i></span></label>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card"><span class="stat-icon blue">⌕</span><div><small>Matching jobs</small><strong id="total">0</strong></div></div>
+            <div class="stat-card"><span class="stat-icon green">⌁</span><div><small>Remote jobs</small><strong id="remoteCount">0</strong></div></div>
+            <div class="stat-card"><span class="stat-icon purple">◈</span><div><small>Categories</small><strong id="categoryCount">0</strong></div></div>
+            <div class="stat-card"><span class="stat-icon amber">↗</span><div><small>Open listings</small><strong id="openCount">0</strong></div></div>
+        </section>
+
+        <section class="content">
+            <div class="section-heading">
+                <div><h2 id="sectionTitle">Opportunities</h2><span id="status"></span></div>
+                <div id="pageInfo"></div>
+            </div>
+            <div id="jobs" class="jobs"></div>
+            <div class="pagination">
+                <button id="previousButton" class="page-button">← Previous</button>
+                <button id="nextButton" class="page-button">Next →</button>
+            </div>
+        </section>
+    </main>
+    <script src="/static/app.js"></script>
+</body>
+</html>
