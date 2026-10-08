@@ -138,3 +138,14 @@ pytest
 ## Note
 
 Job listings come from an external API, so the available jobs can change.
+
+## Screenshots
+
+### Dashboard
+![Job API Collector Dashboard](screenshots/dashboard.png)
+
+### Job Listings
+![Job API Collector Job Listings](screenshots/job-listings.png)
+
+### Filtered Search
+![Job API Collector Filtered Search](screenshots/filtered-search.png)
